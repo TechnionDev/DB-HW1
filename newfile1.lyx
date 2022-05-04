@@ -1,0 +1,217 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+\usepackage{xcolor}
+\pagecolor[rgb]{0.15,0.15,0.15} %black
+\color[rgb]{1,1,1} %grey
+
+\newfontfamily\mylistingsfont{PT Mono}
+\definecolor{lbcolor}{rgb}{0.2,0.2,0.2}  
+\end_preamble
+\use_default_options true
+\begin_modules
+linguistics
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+DB HW 1
+\end_layout
+
+\begin_layout Solution
+1
+\end_layout
+
+\begin_layout Enumerate
+relations: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Customer(
+\bar under
+Cid
+\bar default
+, Cname, Caddr, CCard)
+\end_layout
+
+\begin_layout Itemize
+Auction(
+\bar under
+Aid,
+\bar default
+ type, closed, CurPrice)
+\end_layout
+
+\begin_layout Itemize
+Item(
+\bar under
+Iid
+\bar default
+, Quantity, Cost, IDesc)
+\end_layout
+
+\begin_layout Itemize
+Bid(
+\bar under
+Cid
+\bar default
+,
+\bar under
+ Aid
+\bar default
+, win, NumPayments, Price) - 
+\bar under
+Cid
+\bar default
+ and
+\bar under
+ Aid
+\bar default
+ are FK to Customer and Auction respectively .
+\end_layout
+
+\begin_layout Itemize
+Contains(
+\bar under
+Aid
+\bar default
+,
+\bar under
+Iid
+\bar default
+) - 
+\bar under
+Aid
+\bar default
+ and 
+\bar under
+Iid
+\bar default
+ are FK to Auction and Item respectively.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Graphics
+	filename /Users/danibondar/Downloads/Blank diagram.jpeg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Yes, in the original ERD an item can be sold in several auctions - it would
+ have multiple lines in the table 'Contains' with the 
+\bar under
+Iid
+\bar default
+ of the item and with the 
+\bar under
+Aid
+\bar default
+ which corresponds to the specific auction.
+ 
+\begin_inset Newline newline
+\end_inset
+
+this is a ERD setup that makes sure that each item is sold in only one auction:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/danibondar/Downloads/Blank diagram (2).jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+
+\end_layout
+
+\end_body
+\end_document
