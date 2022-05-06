@@ -1210,7 +1210,353 @@ Given the schemes
 \begin_inset Formula $Scans\left(\underline{scanId},\underline{cid},Grade\right)$
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Standard
+Query: 
+\begin_inset Formula $\forall cid\exists sid:Courses\left(cid,'cs'\right)\wedge Scan\left(sid,cid,100\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Is the RC query domain independent?
+\end_layout
+
+\begin_layout Standard
+The query is domain 
+\series bold
+dependent.
+ 
+\end_layout
+
+\begin_layout Standard
+Notes to make give meaning to the question:
+\end_layout
+
+\begin_layout Enumerate
+I'll assume that the given string has a typo and it should be 
+\begin_inset Formula $Scans$
+\end_inset
+
+ rather than 
+\begin_inset Formula $Scan$
+\end_inset
+
+ because otherwise it's undefined.
+\end_layout
+
+\begin_layout Standard
+Let's look at the database D:
+\end_layout
+
+\begin_layout Standard
+Courses:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underline{cid}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Faculty$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Scans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underline{scanId}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underline{cid}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Grade$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+'cs'
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the domain 
+\begin_inset Formula $\left\{ 'cs',100\right\} $
+\end_inset
+
+ the query evaluates to 
+\begin_inset Formula $true$
+\end_inset
+
+ since for all (
+\begin_inset Formula $'cs'$
+\end_inset
+
+ as well as 
+\begin_inset Formula $100$
+\end_inset
+
+) there's 
+\begin_inset Formula $sid='cs'$
+\end_inset
+
+ which complies with the requirements of the query.
+\end_layout
+
+\begin_layout Standard
+On the other hand, for the query 
+\begin_inset Formula $\left\{ 'cs',100,200\right\} $
+\end_inset
+
+ the query is false because exists a 
+\begin_inset Formula $cid=200$
+\end_inset
+
+ s.t.
+ there's no row in the DB: 
+\begin_inset Formula $Courses\left(200,'cs'\right)$
+\end_inset
+
+ let a lone there's no 
+\begin_inset Formula $sid$
+\end_inset
+
+ s.t.
+ both 
+\begin_inset Formula $Courses\left(200,'cs'\right)\wedge Scan\left(sid,200,100\right)$
+\end_inset
+
+.
+ So the query evaluates to different values for the given database depending
+ on the given domain (both domains we gave as examples contain all the values
+ in the query and in the DB).
+\end_layout
+
+\begin_layout Section
+Question
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\iq}[2]{in\_queue\left(#1,#2\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define the predicates:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $touch\left(Name1,Name2\right)\la\iq{Name1}{Name2},Person\left(Name1\right),Person\left(Name2\right),Name2\neq NULL$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $touch\left(Name1,Name2\right)\la touch\left(Name2,Name1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $interior\left(Name\right)\la touch\left(Name,X\right),touch\left(Name,Y\right),X\neq Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $before\left(Name1,Name2\right)\la\iq{Name1}{Name2},Name2\neq NULL$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $before\left(Name1,Name2\right)\la before\left(Name3,Name2\right),\iq{Name1}{Name3},Name3\neq NULL$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Question Bonus
 \end_layout
 
 \begin_layout Standard
