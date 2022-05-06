@@ -98,7 +98,7 @@ DB HW 1
 \end_layout
 
 \begin_layout Solution
-1
+
 \end_layout
 
 \begin_layout Enumerate
@@ -174,7 +174,7 @@ Iid
 \begin_layout Enumerate
 \begin_inset Graphics
 	filename /Users/danibondar/Downloads/Blank diagram.jpeg
-	scale 80
+	width 50text%
 
 \end_inset
 
@@ -203,13 +203,88 @@ this is a ERD setup that makes sure that each item is sold in only one auction:
 
 \begin_inset Graphics
 	filename /Users/danibondar/Downloads/Blank diagram (2).jpeg
+	width 50text%
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Solution
+FoodsOwned(
+\bar under
+human
+\bar default
+, 
+\bar under
+food
+\bar default
+), Likes(
+\bar under
+human
+\bar default
+, 
+\bar under
+food
+\bar default
+)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{multline*}
+\pi_{human}\left[\left(\left(\rho_{food/food1}\left(\rho_{human/human1}\left(FoodsOwned\right)\right)\right)\Bowtie_{human1=human\land food1!=food}FoodsOwned\right)\right.\Bowtie\\
+\left.\left(\left(\rho_{food/food1}\left(\rho_{human/human1}\left(Likes\right)\right)\right)\Bowtie_{human1=human\land food1!=food}Likes\right)\right]
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left\{ \text{h\ensuremath{\rvert}\ensuremath{\exists}f \left(\left(FoodsOwned\left(h,f\right)\right)\land\left(\lnot\left(Likes(h,f)\right)\right)\right)}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\pi_{FoodsOwned.human}(FoodsOwned\Bowtie_{FoodsOwned.human=Likes.human}Likes)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The RA query retrieves all the humans that like 
+\bar under
+all
+\bar default
+ the kinds of food that humans own.
+ 
+\begin_inset Formula 
+\[
+\left\{ h\lvert\forall f,h_{1}\left(FoodOwned(h_{1},f)\land Likes(h,f)\right)\right\} 
+\]
+
+\end_inset
+
 
 \end_layout
 
