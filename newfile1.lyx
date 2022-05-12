@@ -562,7 +562,7 @@ Customer(
 \bar under
 Cid
 \bar default
-, Cname, Caddr, CCard)
+, Cname, Caddr)
 \end_layout
 
 \begin_layout Itemize
@@ -619,6 +619,18 @@ Aid
 Iid
 \bar default
  are FK to Auction and Item respectively.
+\end_layout
+
+\begin_layout Itemize
+CCard(
+\bar under
+Cid
+\bar default
+, 
+\bar under
+CCard
+\bar default
+)
 \end_layout
 
 \end_deeper
