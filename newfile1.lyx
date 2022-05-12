@@ -1571,7 +1571,23 @@ Define the predicates:
 Question Bonus
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
+\begin_inset Graphics
+	filename PNG image.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Graphics
+	filename PNG image 2.png
+	width 50text%
+
+\end_inset
+
 
 \end_layout
 
