@@ -636,7 +636,7 @@ CCard
 \end_deeper
 \begin_layout Enumerate
 \begin_inset Graphics
-	filename Blank diagram.jpeg
+	filename Blank diagram.jpg
 	width 50text%
 
 \end_inset
@@ -665,7 +665,7 @@ this is a ERD setup that makes sure that each item is sold in only one auction:
 
 
 \begin_inset Graphics
-	filename Blank diagram (2).jpeg
+	filename Blank diagram-q2.jpg
 	width 50text%
 
 \end_inset
